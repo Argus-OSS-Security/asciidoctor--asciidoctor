@@ -1,13 +1,14 @@
 name: CI
-on:
-  push:
-    branches: ['**']
-    paths-ignore: ['*.adoc', 'docs/**']
-  pull_request:
-    paths-ignore: ['*.adoc', 'docs/**']
-  schedule:
-  - cron: '0 2 * * *'
-  workflow_dispatch:
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: ['**']
+#     paths-ignore: ['*.adoc', 'docs/**']
+#   pull_request:
+#     paths-ignore: ['*.adoc', 'docs/**']
+#   schedule:
+#   - cron: '0 2 * * *'
+#   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

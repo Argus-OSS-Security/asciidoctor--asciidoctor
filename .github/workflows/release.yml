@@ -1,15 +1,16 @@
 name: Release
 run-name: ${{ github.workflow }} ${{ github.event.inputs.release-version }}
-on:
-  workflow_dispatch:
-    inputs:
-      release-version:
-        description: Enter version to release (e.g., 2.1.0).
-        required: false
-      release-beer:
-        default: TBD
-        description: Enter beer to mark the occasion.
-        required: false
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       release-version:
+#         description: Enter version to release (e.g., 2.1.0).
+#         required: false
+#       release-beer:
+#         default: TBD
+#         description: Enter beer to mark the occasion.
+#         required: false
 jobs:
   activate:
     runs-on: ubuntu-22.04
